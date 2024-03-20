@@ -18,5 +18,21 @@
     </div>
     <div class="spotify_home-container_playlist col-10">
         <app-top-nav></app-top-nav>
+        <div [style.paddingTop]="'48px'" class="mt-5 container-fluid">
+            <h4 [style.color]="'white'" [style.padding]="'10px'">Focus</h4>
+            <div class="Playlist_card_collections">
+                <div id="song_card_item" *ngFor="let sc of songCards">
+                <app-song-card 
+                [playlistThambnail]="sc.thumbnail" 
+                [title]="sc.title" 
+                [description]="sc.description">
+            </app-song-card>
+                </div>
+            </div>
+        </div>
+        <div [style.paddingTop]="'250px'" class="mt-5 container-fluid">
+            <h4 [style.color]="'white'" [style.padding]="'10px'">Spotify Playlists</h4>
+        </div>
+            
     </div>
 </div>
