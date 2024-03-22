@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchBarService } from 'src/app/services/searchbar.service';
 
 @Component({
   selector: 'app-home',
@@ -80,8 +81,14 @@ export class HomeComponent implements OnInit {
       song_link: '',
     },
   ];
+
+  constructor (private sb: SearchBarService){}
   ngOnInit(): void {
     
+  }
+
+  onNavigateToSearch(){
+    this.sb.isSearchVisible.next(true);
   }
 
 }
