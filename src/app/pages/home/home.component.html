@@ -3,16 +3,16 @@
         <div class="spotify_home-container_side-bar-item">
             <img width="150" class="m-3 text-left" src="assets\Spotify-green.png" alt="spotify logo" />
         </div>
-        <div class="spotify_home-container_side-bar-item">
+        <div class="spotify_home-container_side-bar-item" (click)="onNavigation('home')">
             <a>Home</a>
         </div>
-        <div class="spotify_home-container_side-bar-item" (click)="onNavigateToSearch()">
+        <div class="spotify_home-container_side-bar-item" (click)="onNavigation('search')">
             <a>Search</a>
         </div>
-        <div class="spotify_home-container_side-bar-item">
+        <div class="spotify_home-container_side-bar-item" (click)="onNavigation('library')">
             <a>Your Library</a>
         </div>
-        <div class="spotify_home-container_side-bar-item">
+        <div class="spotify_home-container_side-bar-item" (click)="onNavigation('playlist')">
             <a>Create Playlist</a>
         </div>
     </div>
