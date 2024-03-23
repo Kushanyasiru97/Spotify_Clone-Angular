@@ -7,6 +7,24 @@ import { SearchBarService } from 'src/app/services/searchbar.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public browserAll = [
+    {
+      bgColor: 'red',
+      color: 'white',
+      title: 'Podcasts',
+    },
+    { bgColor: 'green', color: 'white', title: 'Made for you' },
+    { bgColor: 'purple', color: 'white', title: 'Charts' },
+    { bgColor: 'blue', color: 'white', title: 'Live streams' },
+    { bgColor: 'pink', color: 'white', title: 'Bollywood' },
+    { bgColor: 'lightblue', color: 'white', title: 'Punjabi' },
+    { bgColor: 'orange', color: 'white', title: 'Tamil' },
+    { bgColor: 'yellow', color: 'white', title: 'Telugu' },
+    { bgColor: 'black', color: 'white', title: 'Marathi' },
+    { bgColor: 'orangered', color: 'white', title: 'Hip-Hop' },
+    { bgColor: 'darkgray', color: 'white', title: 'Workout' },
+    { bgColor: 'smokewhite', color: 'white', title: 'R&B' },
+  ];
   public songCards = [
     {
       song_id: 1,
@@ -81,14 +99,22 @@ export class HomeComponent implements OnInit {
       song_link: '',
     },
   ];
+  constructor(public sb: SearchBarService) {}
 
-  constructor (private sb: SearchBarService){}
-  ngOnInit(): void {
-    
+  ngOnInit(): void {}
+
+  onInputFilterRes($event: string) {
+    const res = this.browserAll.filter(
+      (element) => element.title.toLowerCase() === $event.toLowerCase().trim()
+    );
+    console.log(res);
   }
 
-  onNavigateToSearch(){
-    this.sb.isSearchVisible.next(true);
+  onNavigation(pageName: string) {
+    if (pageName === 'search') {
+      this.sb.isSearchVisible.next(true);
+    } else {
+      this.sb.isSearchVisible.next(false);
+    }
   }
-
 }
