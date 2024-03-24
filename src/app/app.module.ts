@@ -10,10 +10,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SongCardComponent } from './component/song-card/song-card.component';
 import { TopNavComponent } from './component/top-nav/top-nav.component';
-import { ButtonsComponent } from './component/buttons/buttons.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SongComponent } from './pages/song/song.component';
-import { BrowseCardComponent } from './component/browse-card/browse-card.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +23,7 @@ import { BrowseCardComponent } from './component/browse-card/browse-card.compone
     LoginComponent,
     SongCardComponent,
     TopNavComponent,
-    ButtonsComponent,
     SongComponent,
-    BrowseCardComponent
   ],
   imports: [
     BrowserModule,
