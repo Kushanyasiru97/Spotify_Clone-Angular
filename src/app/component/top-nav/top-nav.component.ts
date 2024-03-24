@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchBarService } from 'src/app/services/searchbar.service';
 
@@ -9,7 +9,7 @@ import { SearchBarService } from 'src/app/services/searchbar.service';
 })
 export class TopNavComponent implements OnInit {
   public isSearchFieldVisible: boolean = false;
- // @Output() public inputFilterRes: EventEmitter<any> = new EventEmitter();
+  @Output() public inputFilterRes: EventEmitter<any> = new EventEmitter();
   constructor(private router: Router, private sb: SearchBarService) {}
 
   ngOnInit(): void {
@@ -24,12 +24,12 @@ export class TopNavComponent implements OnInit {
 
   filterBrowsingList(inputElement: HTMLInputElement) {
      console.log(inputElement);
-    //this.inputFilterRes.emit(inputElement.value);
+    this.inputFilterRes.emit(inputElement.value);
   }
 }
 
-//function constructor(private: any, router: any, Router: typeof Router, private1: any, sb: any, SearchBarService: any) {
-//  throw new Error('Function not implemented.');
+/////function constructor(private: any, router: any, Router: typeof Router, private1: any, sb: any, SearchBarService: any) {
+ // throw new Error('Function not implemented.');
 //}
 
 
